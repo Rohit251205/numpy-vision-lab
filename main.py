@@ -146,9 +146,112 @@ crop_image = Image.fromarray(crop_array)
 crop_image.save("output/crop_car.jpeg")
 
 # Success Message
-print("\n========================================")
+print("\n======================================")
 print("CROP OPERATION")
 print("========================================")
 print("Status       : Success")
 print("Image Saved  : output/crop_car.jpeg")
 print("========================================")
+
+
+# ==========================================
+# Grayscale Transformation
+# ==========================================
+
+# Perform Grayscale Transformation using NumPy
+grayscale_array = np.average(car_array, axis=2)
+grayscale_array = grayscale_array.astype(np.uint8)
+
+# Convert NumPy array back to Image
+grayscale_image = Image.fromarray(grayscale_array)
+
+# Save Grayscale image
+grayscale_image.save("output/grayscale_car.jpeg")
+
+# Success Message
+print("\n======================================")
+print("GRAYSCALE TRANSFORMATION")
+print("========================================")
+print("Status       : Success")
+print("Image Saved  : output/grayscale_car.jpeg")
+print("========================================")
+
+
+# ==========================================
+# Negative Transformation
+# ==========================================
+
+# Perform Negative Transformation using NumPy
+negative_array = 255 - car_array
+
+# Convert NumPy array back to Image
+negative_image = Image.fromarray(negative_array)
+
+# Save Negative image
+negative_image.save("output/negative_car.jpeg")
+
+# Success Message
+print("\n======================================")
+print("NEGATIVE TRANSFORMATION")
+print("========================================")
+print("Status       : Success")
+print("Image Saved  : output/negative_car.jpeg")
+print("========================================")
+
+
+# ==========================================
+# Brightness Adjustment
+# ==========================================
+
+# Brightness Value
+brightness = 40
+
+# Convert uint8 to int16 to avoid overflow
+brightness_array = car_array.astype(np.int16)
+
+# Increase Brightness
+brightness_array = brightness_array + brightness
+
+# Keep pixel values between 0 and 255
+brightness_array = np.clip(brightness_array, 0, 255)
+
+# Convert back to uint8
+brightness_array = brightness_array.astype(np.uint8)
+
+# Convert NumPy array back to Image
+brightness_image = Image.fromarray(brightness_array)
+
+# Save Brightness Image
+brightness_image.save("output/brightness_car.jpeg")
+
+# Success Message
+print("\n======================================")
+print("BRIGHTNESS ADJUSTMENT")
+print("========================================")
+print(f"Brightness Value : +{brightness}")
+print("Status           : Success")
+print("Image Saved      : output/brightness_car.jpeg")
+print("========================================")
+
+
+# ==========================================
+# Image Statistics
+# ==========================================
+
+min_pixel = np.min(car_array)
+print("Minimum Pixel Value :",min_pixel)
+
+max_pixel = np.max(car_array)
+print("Maximum Pixel Value :",max_pixel)
+
+mean_pixel = np.mean(car_array)
+print("Mean Pixel Value :",mean_pixel)
+
+median_pixel = np.median(car_array)
+print("Median Pixel Value :",median_pixel)
+
+standard_deviation = np.std(car_array)
+print("Standard Deviation :",standard_deviation)
+
+variance = np.var(car_array)
+print("Variance :",variance)
