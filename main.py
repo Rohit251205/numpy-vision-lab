@@ -49,3 +49,9 @@ print("Image Size :",car_array.size)
 print("Image Datatype :",car_array.dtype)
 print("Minimum Pixel :",np.min(car_array))
 print("Maximum Pixel :",np.max(car_array))
+
+horizontal_flip = np.fliplr(car_array)
+
+convert_image = Image.fromarray(horizontal_flip)
+
+convert_image.save("output/horizontal_flip_car.jpeg")
