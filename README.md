@@ -2,11 +2,11 @@
 
 ## Overview
 
-NumPy Vision Lab is a lightweight image processing project built using NumPy and Pillow.
+NumPy Vision Lab is a beginner-friendly image processing project built using NumPy and Pillow. It demonstrates how NumPy arrays can be used to perform common image processing operations without relying on advanced computer vision libraries.
 
-The project demonstrates how images can be represented as NumPy arrays and processed using basic image transformations.
+---
 
-## Technologies
+## Technologies Used
 
 - Python
 - NumPy
@@ -15,6 +15,63 @@ The project demonstrates how images can be represented as NumPy arrays and proce
 - GitHub
 - VS Code
 
-## Project Status
+---
 
-🚧 In Development
+## Features
+
+### Image Processing
+
+- Image Loading
+- NumPy Array Conversion
+- Image Information
+
+### Basic Operations
+
+- Horizontal Flip
+- Vertical Flip
+- Rotate 90°
+- Center Crop
+
+### Color Transformations
+
+- Grayscale
+- Negative
+- Brightness Adjustment
+
+### Image Analytics
+
+- Minimum Pixel Value
+- Maximum Pixel Value
+- Mean Pixel Value
+- Median Pixel Value
+- Standard Deviation
+- Variance
+
+---
+
+## Project Structure
+
+```text
+NumPy_Vision_Lab/
+│
+├── images/
+├── output/
+├── main.py
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
+
+---
+
+## Libraries
+
+```bash
+pip install numpy pillow
+```
+
+---
+
+## Author
+
+Rohit Prajapati
